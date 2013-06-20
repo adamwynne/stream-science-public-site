@@ -1,4 +1,5 @@
 /*
+!rebaselinks
 !wp-content/
 !woothemes*
 .htaccess

@@ -1,0 +1,24 @@
+#! /bin/bash
+
+SCRIPT_NAME=$( basename "${BASH_SOURCE[0]}" )
+echo $SCRIPT_NAME is rebasing...
+
+function findreplace {
+    FROM_RE=$(echo "$1" | sed 's/[^-A-Za-z0-9_]/\\&/g')
+    TO_RE=$(echo "$2" | sed 's/[^-A-Za-z0-9_]/\\&/g')
+    BASE_DIR=$3
+    if [ "$BASE_DIR" == '' ]; then
+        BASE_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+    fi
+
+    echo - from regex $FROM_RE
+    echo - to regex $TO_RE
+
+    echo "- Replacing in files..."
+
+    egrep -ilRI --exclude=$SCRIPT_NAME "$FROM_RE" $BASE_DIR | xargs -L 1 sed -E -i.remove_me "s/$FROM_RE/$TO_RE/g"
+    find $BASE_DIR -iname "*.remove_me" -print0 | xargs -0 rm -rf
+}
+
+findreplace "localhost:8080/wordpress" "www.streamscience.co"
+findreplace "localhost:8080\/wordpress" "www.streamscience.co"
