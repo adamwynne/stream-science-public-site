@@ -1,0 +1,17 @@
+1) On wp-local machine 
+   - backup db
+   - run rebaselinks on the wp-content folder
+   - git push
+
+2) On another machine
+   - git pull
+   - backup the framework settings to the rebaselinks directory
+   - run the rebaselinks on the ./ folder
+   - git push
+   - ftp the wp-content folder to live
+
+3) On live
+   - Using add from server plugin, update the media library
+   - restore the db
+   - restore the framework settings
+   
