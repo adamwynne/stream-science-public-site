@@ -19,6 +19,70 @@ Add styles beneath this line that you want to be applied across your entire site
 	padding-bottom: 0em;
 }
 
+.handwriting {
+font-family: 'Gloria Hallelujah';
+font-size: 1.5em;
+color: #f4f4f4;
+text-align: right;
+-ms-transform: rotate(-7deg);
+-moz-transform: rotate(-7deg);
+-webkit-transform: rotate(-7deg);
+-o-transform: rotate(-7deg);
+transform: rotate(-7deg);
+}
+
+.arrow img {
+	width: 90%;
+	margin-bottom: 14px;
+}
+
+.sign-up-btn {
+padding: 15px 22px;
+color: #f4f4f4;
+border-radius: 10px;
+font-family: Asap;
+border: 2px solid;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+background-color: #85b401;
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#85b401), to(#599501));
+background: -moz-linear-gradient(19% 75% 90deg,#599501, #85b401);
+border-left: solid 2px #b5e635;
+border-top: solid 2px #b5e635;
+border-right: solid 2px #739223;
+border-bottom: solid 2px #495d16;
+}
+
+.sign-up-btn .top-line {
+font-size: 2em;
+font-weight: bold;
+}
+
+.sign-up-btn .under-line {
+}
+
+.one-third {
+	width: 66%;
+	display: inline-block;
+}
+
+.one-third > a {
+	text-decoration: none;
+}
+
+.only-big {
+	display: none;
+}
+
+@media all and (min-width: 1024px) {
+.one-third {
+	width: 33%;
+}
+.only-big {
+	display: inline-block;
+}
+}
+
 media="all"
 layout.css:123@media only screen and (min-width: 768px)
 ul.nav li {
