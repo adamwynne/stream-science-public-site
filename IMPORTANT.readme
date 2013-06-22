@@ -1,17 +1,12 @@
 1) On wp-local machine 
+   - make sure the user Adam exists
    - backup db
    - run rebaselinks on the wp-content folder
-   - git push
+   - git commit and push
 
-2) On another machine
-   - git pull
-   - backup the framework settings to the rebaselinks directory
-   - run the rebaselinks on the ./ folder
-   - git push
-   - ftp the wp-content folder to live
-
-3) On live
-   - Using add from server plugin, update the media library
-   - restore the db
-   - restore the framework settings
+2) On live
+   - ftp the wp-content folder onto live
+   - empty all db tables except user and usermeta using WP-DP-admin (sp)
+   - take the sql backup and paste it in the run-sql window and run
+   - re-activate the plugins and in the theme, save all settings
    
